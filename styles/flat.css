@@ -1,0 +1,276 @@
+/* Base */
+:root{
+    --color-primary: rgb(0,128,128); 
+    --color-primary-transparent: rgba(0,128,128,.33);
+    --color-white: white;
+    --color-background: rgb(225,225,225);
+    --color-black: rgb(15,15,15);
+    --color-block: rgb(250,255,255);
+}
+body{
+    background-color: var(--color-background);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-black);
+}
+div.page{
+    background-color: var(--color-background);
+}
+div.footer{
+    margin-top: .5em;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: .5em;
+}
+
+li{
+    padding-top: .3em;
+    padding-bottom: .3em;
+}
+li:hover{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+/* Blocks */
+div.block{
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 37%);
+    background-color: var(--color-block);
+    margin: .5em;
+    cursor:default;
+}
+div.block:hover{
+    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 30%);
+    transform: scale(1.02,1.02);
+    animation-name: zoomblock;
+    animation-duration: .4s;
+}
+@keyframes zoomblock {
+    from {transform: scale(1,1); box-shadow: 0 1px 4px 0 rgb(0 0 0 / 37%)}
+    to {transform: scale(1.02,1.02); box-shadow: 0 6px 10px 0 rgb(0 0 0 / 30%)}
+}
+div.block-title{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1.2em;
+    padding-top: .2em;
+    padding-bottom: .1em;
+    padding-left: .2em;
+    padding-right: .2em;
+}
+div.block-title span{
+    margin-right: .5em;
+}
+div.block-content{
+    background-color: var(--color-block);
+    padding-top: .5em;
+    padding-bottom: 1em;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+/* Identity */
+#identity .picture{
+    text-align: center;
+    padding-top: .2em;
+    padding-bottom: .3em;
+}
+#identity .picture img{
+    transform: rotate(-2deg);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 57%);
+}
+#identity .name{
+    font-size: 1.5em;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    margin-bottom: -.66em;
+    margin-left: -.35em;
+    margin-right: -.35em;
+    padding: .2em;
+    text-align: center;
+}
+
+/* Tools */
+
+/* Contact */
+
+/* Chrono elements */
+div.chrono-circle{
+    width:20px;
+    height:40px;
+}
+div.chrono-line{
+    height:100%;
+    width:11px;
+    border-right: 2px solid var(--color-primary);
+}
+circle.chrono, line.chrono{
+    stroke:var(--color-primary);
+    stroke-width: 2;
+    fill:transparent;
+}
+circle.chrono:hover{
+    fill:var(--color-primary);
+}
+
+/* Jobs */
+div.job{
+    width:100%;
+}
+.job .body{
+    width:100%;
+}
+div.job-header{
+    padding-top:10px;
+    padding-bottom:2px;
+    width:100%;
+}
+    div.job-period{
+        padding-left:.2em;
+        padding-right:.2em;
+        min-width:100px;
+    }
+        div.job-dates{
+            color:var(--color-primary);
+            font-size: 1.15em;
+        }
+        div.job-duration{
+            color:var(--color-primary);
+            font-size: 0.85em;
+            font-style:italic;
+        }
+        div.job-title{
+            font-size:1.15em;
+        }
+        div.job-company{
+            font-size:0.85em;
+            color:rgb(150,150,150);
+            font-style:italic;
+        }
+div.job-taskslist{
+    width:100%;
+}
+    .job.task{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 1px;
+        padding-right: 1px;
+        width: 100%;
+    }
+        .job.task:hover{
+            cursor: pointer;
+            background-color: var(--color-primary);
+            color:white;
+        }
+    div.job-task-icon div.job-task-caret{
+        display:flex;
+        align-items: center;
+    }
+    div.job-task-text{
+        margin-left:5px;
+    }
+    div.job-task-icon{
+        margin-left:10px;
+        color:rgb(200,200,200);
+    }
+
+/* Curriculum */
+div.diploma{
+    width: 100%;
+}
+.diploma .dates{
+    color:var(--color-primary);
+    font-size: 1.15em;
+    min-width: 100px;
+    padding-top: 10px;
+    padding-left:.2em;
+    padding-right:.2em;
+}
+.diploma .label{
+    padding-top: 10px;
+}
+.diploma .name{
+    font-size:1.15em;    
+}
+.diploma .school{
+    font-size:0.85em;
+    color:rgb(150,150,150);
+    font-style:italic;    
+}
+
+/* Modal */
+.modal-wrapper{
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .modal-wrapper{
+      background-color: rgba(0, 0, 0, .5);
+    }
+  }
+div.modal{
+    background-color: var(--color-block);
+    color: var(--color-black);
+    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 30%);
+    -webkit-animation-name: modalreveal;
+    -webkit-animation-duration: 0.4s;
+    animation-name: modalreveal;
+    animation-duration: 0.4s;
+}
+@-webkit-keyframes modalreveal {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+@keyframes modalreveal {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+div.modal-header{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding-top: .2em;
+    padding-bottom: .1em;
+    padding-left: .2em;
+    padding-right: .2em;
+    font-size: 1.2em;
+}
+.modal-close {
+    color: var(--color-white);
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+.modal-close:hover, .modal-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+div.modal-content{
+    height: max-content;    
+    padding-top: .2em;
+    padding-bottom: .5em;
+    padding-left: .5em;
+    padding-right: .5em;
+    background-color: var(--col);
+    display: flex;
+    flex-direction: column;
+}
+
+div.donut{
+   width: 100px;
+   height: 100px;
+   border-radius: 50%; 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+div.donut-hole{
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background-color: white;
+}
+div.chart{
+    display: flex;
+    flex-direction: row;
+}
